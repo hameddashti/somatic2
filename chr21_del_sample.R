@@ -2,7 +2,7 @@
   library(tidyverse)
 }
 #=======Read files========
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 pcnt<-paste0(path,'/AGRE_cnv_control.csv')
 pcs<-paste0(path,'/AGRE_cnv_case.csv')
 t1<-subset(input_case,input_case$CNV.Type=='Del')
@@ -64,7 +64,7 @@ if(nrow(chr21_del_cnv)!=0){
   }
 }
 
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/chr21_del.csv')
 write.csv(chr21_del_cnv,path)
 #======================Significant regions=======================
@@ -91,6 +91,6 @@ significant_regions_chr21_del_cnv<- significant_file_Del%>%
     mean_control = mean(V3),
   )
 
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/regions_chr21_del.csv')
 write.csv(significant_regions_chr21_del_cnv,path)

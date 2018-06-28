@@ -2,7 +2,7 @@
   library(tidyverse)
 }
 #=======Read files========
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 pcnt<-paste0(path,'/AGRE_cnv_control.csv')
 pcs<-paste0(path,'/AGRE_cnv_case.csv')
 t1<-subset(input_case,input_case$CNV.Type=='Dup')
@@ -63,7 +63,7 @@ if(nrow(chr13_dup_cnv)!=0){
     chr13_dup_cnv[i,5] <-fisher.test(m,alternative = "less",conf.level =0.9)$p.value
   }
 }
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/chr13_dup.csv')
 write.csv(chr13_dup_cnv,path)
 #======================Significant regions=======================
@@ -90,6 +90,6 @@ significant_regions_chr13_dup_cnv<- significant_file_Dup%>%
     mean_control = mean(V3),
   )
 
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/regions_chr13_dup.csv')
 write.csv(significant_regions_chr13_dup_cnv,path)

@@ -2,7 +2,7 @@
   library(tidyverse)
 }
 #=======Read files========
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 pcnt<-paste0(path,'/AGRE_cnv_control.csv')
 pcs<-paste0(path,'/AGRE_cnv_case.csv')
 input_case<- read.csv(pcs,header = T)
@@ -65,7 +65,7 @@ if(nrow(chr1_del_cnv)!=0){
     chr1_del_cnv[i,5] <-fisher.test(m,alternative = "less",conf.level =0.9)$p.value
   }
 }
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/chr1_del.csv')
 write.csv(chr1_del_cnv,path)
 
@@ -93,6 +93,6 @@ significant_regions_chr1_del_cnv<- significant_file_Del%>%
     mean_control = mean(V3),
   )
 
-path<-dirname(rstudioapi::getSourceEditorContext()$path)
+path<-'/home/san/halinejad/Desktop/Dashti/somatic2'
 path<-paste0(path,'/Result/regions_chr1_del.csv')
 write.csv(significant_regions_chr1_del_cnv,path)
